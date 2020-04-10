@@ -1,3 +1,5 @@
 name: Ochre
 markdown: kramdown
 strict_front_matter: True
+excerpt_separator: <!--excerptend-->
+permalink: /:year/:month/:day/:title

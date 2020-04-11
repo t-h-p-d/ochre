@@ -3,10 +3,14 @@ layout: default
 title: ochre tests
 ---
 
-<ul class="row main-wall">
-  {% for post in site.posts %}
-    <li class="wall-item">
-      <a href="{{ post.url | relative_url }}">{{ post.excerpt }}</a>
-    </li>
-  {% endfor %}
-</ul>
+{% include nav.html %}
+<main>
+  <ul class="row main-wall">
+    {% for post in site.posts %}
+      <li class="wall-item">
+        <a href="{{ post.url | relative_url }}">{{ post.excerpt }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+</main>
+{% include footer.html %}

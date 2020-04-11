@@ -1,4 +1,4 @@
-name: Ochre
+title: Ochre
 markdown: kramdown
 strict_front_matter: True
 excerpt_separator: <!--excerptend-->

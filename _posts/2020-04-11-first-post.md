@@ -5,6 +5,6 @@ title: "first test post"
 
 some excerpt above the fold...
 
-<!--endexcerpt-->
+<!--excerptend-->
 
 some more post continues here.

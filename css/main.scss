@@ -3,6 +3,54 @@
 
 @import 'typography';
 
-li {
-  list-style-type: none;
+.fake-content-wrapper {
+  padding-top: 1px;
+  width: 100%;
+  height: 200vh;
+  background-color: rgb(221, 221, 221);
+}
+
+/*global variables*/
+
+$small: 1rem * 2 / 3;
+
+/*baseline settings for html elements*/
+
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+hr {
+  margin: 0;
+}
+
+/*location based / functional classes*/
+
+.top-nav {
+  border-bottom: 1px solid $type-color;
+  position: sticky;
+  top: 0;
+  width: 100%;
+}
+
+.top-nav-list {
+  justify-content: space-between;
+  padding: $small;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
 }

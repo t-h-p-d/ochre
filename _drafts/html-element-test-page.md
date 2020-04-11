@@ -3,6 +3,10 @@ layout: post
 title: "html element test post"
 ---
 
+html element test page
+
+<!--excerptend-->
+
 <div id="top" class="page" role="document">
   <header role="banner">
     <h1>HTML5 Test Page</h1>

@@ -5,3 +5,4 @@ excerpt_separator: <!--excerptend-->
 permalink: /:year/:month/:day/:title
 sass:
     sass_dir: _sass
+baseurl: /ochre

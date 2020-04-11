@@ -36,6 +36,7 @@ hr {
   position: sticky; /*may need a fallback, though position: static is probably the most graceful option...*/
   top: 0;
   width: 100%;
+  background-color: white;
 }
 
 .top-nav-list {

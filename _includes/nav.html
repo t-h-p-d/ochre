@@ -1,6 +1,6 @@
 <nav class="top-nav">
   <ul class="row top-nav-list">
-    <li><a href="{{ site.url | relative_url }}">{{ site.title }}</a></li>
+    <li><a href="{{ site.url | append:site.baseurl | append:"/" }}">{{ site.title }}</a></li>
     <li><a href="#">Menu</a></li>
   </ul>
 </nav>

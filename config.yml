@@ -4,4 +4,4 @@ strict_front_matter: True
 excerpt_separator: <!--excerptend-->
 permalink: /:year/:month/:day/:title
 sass:
-    sass_dir: _sasspartials
+    sass_dir: _sass

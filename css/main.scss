@@ -29,3 +29,12 @@ hr {
 main {
   width: 100%;
 }
+
+p {
+  max-width: 35rem;
+  margin-bottom: 0;
+}
+
+* p:first-of-type {
+  margin-top: 0;
+}

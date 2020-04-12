@@ -23,8 +23,14 @@
 }
 
 .wall-item {
-  height: $medium;
-  padding: 2px 0 0 2px;
+  min-height: $medium;
+  height: 17.5vh;
+  padding: 0 0 $minimal $minimal;
+}
+
+.wall-item:hover {
+  /*margin: 0 $small $minimal $small;
+  transition: margin 0.15s ease-in-out;*/
 }
 
 li.wall-item *{

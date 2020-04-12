@@ -8,7 +8,11 @@ title: ochre tests
   <ul class="row main-wall">
     {% for post in site.posts %}
       <li class="wall-item">
-        <a href="{{ post.url | relative_url }}">{{ post.excerpt }}</a>
+        <a href="{{ post.url | relative_url }}">
+          {% if post.related_image %}
+            <img src="{{ post.related_image | prepend:"/imgs" | relative_url }}"/>
+          {% endif %}
+        </a>
       </li>
     {% endfor %}
   </ul>

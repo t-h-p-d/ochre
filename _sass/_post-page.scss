@@ -4,8 +4,26 @@
   //margin-top: $minimal;
   width: 100%;
   height: 100vh;
-  background-size: auto 100% !important;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  /*background-size: auto 100% !important;
   background-position: center;
   background-attachment: scroll;
-  background-repeat: no-repeat;
+  background-repeat: no-repeat;*/
 }
+
+.post-image-container::-webkit-scrollbar {
+  display: none;
+}
+
+.post-image {
+  height: 100%
+}
+
+.column {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+
+/*version check comment*/

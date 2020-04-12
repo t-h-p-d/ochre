@@ -9,9 +9,14 @@ title: ochre tests
     {% for post in site.posts %}
       <li class="wall-item">
         <a href="{{ post.url | relative_url }}">
+
           {% if post.related_image %}
-            <img src="{{ post.related_image | prepend:"/imgs" | relative_url }}"/>
+            <img src="{{ post.related_image | prepend:"/imgs" | relative_url }}" class="wall-image"/>
           {% endif %}
+
+          <!--h4 class="wall-title">{{ post.title }}</h4-->
+
+
         </a>
       </li>
     {% endfor %}

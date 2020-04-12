@@ -3,6 +3,7 @@
 @import 'post-page';
 @import 'index-page';
 @import 'typography';
+@import 'nav';
 
 /*baseline settings for html elements*/
 
@@ -37,4 +38,14 @@ p {
 
 * p:first-of-type {
   margin-top: 0;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.column {
+  display: flex;
+  flex-flow: column;
 }

@@ -6,6 +6,7 @@
   height: 100vh;
   overflow-x: scroll;
   overflow-y: hidden;
+  align-items: flex-start;
   /*background-size: auto 100% !important;
   background-position: center;
   background-attachment: scroll;
@@ -23,7 +24,6 @@
 .column {
   display: flex;
   flex-flow: column;
-  align-items: center;
 }
 
 /*version check comment*/

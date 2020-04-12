@@ -11,11 +11,20 @@ title: ochre tests
         <a href="{{ post.url | relative_url }}">
 
           {% if post.related_image %}
+
             <img src="{{ post.related_image | prepend:"/imgs" | relative_url }}" class="wall-image"/>
+
+            <div class="wall-title-container column">
+              <span class="wall-title">{{ post.title }}</span>
+            </div>
+
+          {% else %}
+
+            <div class="wall-title-container column textonly">
+              <span class="wall-title">{{ post.title }}</span>
+            </div>
+
           {% endif %}
-
-          <!--h4 class="wall-title">{{ post.title }}</h4-->
-
 
         </a>
       </li>

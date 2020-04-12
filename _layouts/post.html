@@ -3,7 +3,13 @@ layout: default
 ---
 {% include nav.html %}
 <main>
-  <div class="post">
+
+  {% if page.related_image %}
+    <div class="post-image-container" style="background: url({{ page.related_image | prepend:"/imgs" | relative_url }}) no-repeat center center;">
+    </div>
+  {% endif %}
+
+  <div class="post-content">
     {{ content }}
   </div>
 

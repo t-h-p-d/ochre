@@ -24,7 +24,12 @@
 
 .wall-item {
   height: $medium;
-  padding: 2px 0 0 2px;
+  padding: $minimal 0 0 $minimal;
+}
+
+.wall-item:hover {
+  /*margin: 0 $small $minimal $small;
+  transition: margin 0.15s ease-in-out;*/
 }
 
 li.wall-item *{

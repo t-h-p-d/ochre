@@ -23,8 +23,9 @@
 }
 
 .wall-item {
-  height: $medium;
-  padding: $minimal 0 0 $minimal;
+  min-height: $medium;
+  height: 17.5vh;
+  padding: 0 0 $minimal $minimal;
 }
 
 .wall-item:hover {

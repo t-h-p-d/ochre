@@ -11,25 +11,35 @@
   position: relative;
 }
 
+li.wall-item *{
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
 .wall-image {
-  //position: absolute;
   z-index: 99
 }
 
 .wall-image:hover {
-  opacity: 5%;
+  opacity: 0%;
   transition: opacity 0.15s ease-in-out;
 }
 
 .wall-title-container {
   position: absolute;
   z-index: -99;
-  top: 0%;
-  left: 0%;
+  top: 0;
+  left: 0;
   width: 100%;
   //justify-content: center;
   //align-items: center;
   overflow: hidden;
+}
+
+.wall-title{
+  height: auto !important;
+  padding: $small !important;
 }
 
 .textonly {
@@ -41,21 +51,4 @@
 .textonly:hover {
   background-color: rgba(241, 241, 241, 0.86);
   transition: background-color 0.15s ease-in-out;
-}
-
-.wall-item:hover {
-  //border: 1px solid rgba(241, 241, 241, 0.86);
-  //background-color: rgba(241, 241, 241, 0.86);
-  //transition: background-color 0.15s ease-in-out;
-}
-
-.wall-title{
-  height: auto !important;
-  padding: $small !important;
-}
-
-li.wall-item *{
-  height: 100%;
-  padding: 0;
-  margin: 0;
 }

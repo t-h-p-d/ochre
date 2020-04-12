@@ -2,7 +2,7 @@
 
 .post-container {
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: flex-start;
 }
 
 .post-image-container {
@@ -15,19 +15,17 @@
 }
 
 .post-image {
-  max-height: 100vh;
+  max-height: 100vh;/*would be good to find a way to subtract the height of the nav element*/
+  //margin-right: $small;
 }
 
-.post-content {
-  //align-items: center;
-  //justify-content: flex-end;
+.post-content-container {
   padding: $small;
   align-self: flex-end;
+  flex-grow: 1;
+  //background-color: blue;
 }
 
-.column {
-  display: flex;
-  flex-flow: column;
+.post-content-container p {
+  margin: 0 auto;
 }
-
-/*version check comment*/

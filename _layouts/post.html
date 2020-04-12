@@ -10,8 +10,10 @@ layout: default
           <img src="{{ page.related_image | prepend:"/imgs" | relative_url }}" class="post-image"/>
         </div>
       {% endif %}
-      <div class="post-content">
-        {{ content }}
+      <div class="post-content-container">
+          <h4>{{ page.title }}</h4>
+          <h4>{{ page.date | date_to_string }}</h4>
+          {{ content }}
       </div>
     </div>
     <!--div class="post-image-container" style="background-image: url({{ page.related_image | prepend:"/imgs" | relative_url }});">
@@ -20,6 +22,6 @@ layout: default
 
 
 
-  <p class="meta">{{ page.date | date_to_string }}</p>
+
 </main>
 {% include footer.html %}

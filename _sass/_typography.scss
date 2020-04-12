@@ -7,7 +7,7 @@ $serif: 'Inria Serif', serif;/*weights available: 300 to 700*/
 html {
   font-family: $sans;
   font-size: 90%;
-  font-weight: 400;
+  font-weight: 500;
   color: $type-color;
 }
 
@@ -18,8 +18,15 @@ a {
 
 h1,h2,h3,h4,h5,h6 {
   font-style: italic;
-  font-weight: 400;
+  font-weight: 500;
   font-size: 1rem;
+  font-family: $sans;
+  text-decoration: underline;
+}
+
+p {
+  font-family: $sans;
+  //font-size: 1.2Rem;
 }
 
 li {

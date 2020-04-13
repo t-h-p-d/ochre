@@ -1,27 +1,52 @@
 @import "variables";
 
+.shim {
+  width: 100%;
+}
+
 .top-nav {
-  border-bottom: 1px solid lighten($type-color, 50%);
-  position: sticky; /*may need a fallback, though position: static is probably the most graceful option...*/
+  border-bottom: $thinline;
+  //position: sticky; /*may need a fallback, though position: static is probably the most graceful option...*/
+  position: fixed;
   top: 0;
   width: 100%;
-  background-color: white;
+  //background-color: white;
 }
 
 .top-nav-list {
   justify-content: space-between;
   padding: $small;
+  background-color: white;
 }
 
 .nav-title {
-  //text-decoration: underline;
 }
 
 .expanded-nav-container {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100vh;
   width: 100%;
-  background-color: rgba(222, 195, 22, 0.38);
+  display: none;
+  border-top: $thinline;
+  background-color: rgba(255, 255, 255, 0.56);
+  height:100vh;
+}
+
+.expanded-nav-list {
+  text-align: center;
+}
+
+.nav-item {
+  padding: $small;
+  min-height: $medium;
+  height: 17.5vh;
+  justify-content: flex-end;
+  align-items: center;
+  border-bottom: $thinline;
+}
+
+/*li.nav-item:last-of-type {
+  border-bottom: 0;
+}*/
+
+.expand {
+  display: block;
 }

@@ -1,14 +1,14 @@
 <nav class="top-nav">
-  <ul class="row top-nav-list">
+  <ul class="row top-nav-list" id="topnavlist">
     <li class="nav-title"><a href="{{ site.url | append:site.baseurl | append:"/" }}">{{ site.title }}</a></li>
-    <li class="nav-title"><a href="#">Menu</a></li>
+    <li class="nav-title" id="menubutton" onclick="toggleIdExpand('exnavcont');"><a>Menu</a></li>
   </ul>
-  <div class="expanded-nav-container">
-    <ul class="expanded-nav-list">
-      <li class="nav-item"></li>
-      <li class="nav-item"></li>
-      <li class="nav-item"></li>
-      <li class="nav-item"></li>
+  <div class="expanded-nav-container" id="exnavcont">
+    <ul class="expanded-nav-list column">
+      <li class="nav-item row">item1</li>
+      <li class="nav-item row">item2</li>
+      <li class="nav-item row">item3</li>
+      <li class="nav-item row">item4</li>
     </ul>
   </div>
 </nav>

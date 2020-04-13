@@ -4,7 +4,8 @@
 @import 'index-page';
 @import 'typography';
 @import 'nav';
-@import 'test-page';
+//@import 'test-page'; (Archived)
+
 /*baseline settings for html elements*/
 
 html {
@@ -48,4 +49,8 @@ p {
 .column {
   display: flex;
   flex-flow: column;
+}
+
+a:hover {
+  cursor: pointer;
 }

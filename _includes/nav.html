@@ -1,6 +1,10 @@
-<nav class="top-nav">
+<nav class="top-nav" id="topnavlist">
   <ul class="row top-nav-list">
     <li class="nav-title"><a href="{{ site.url | append:site.baseurl | append:"/" }}">{{ site.title }}</a></li>
-    <li class="nav-title"><a href="#">Menu</a></li>
+    <li class="nav-title" onclick="toggleId('menu')"><a>Menu</a></li>
   </ul>
 </nav>
+
+<ul class="column menu" id="menu" onclick="toggleId('menu')">
+  <li></li>
+</ul>

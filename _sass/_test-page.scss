@@ -1,0 +1,38 @@
+@import 'variables';
+
+#top-nav {
+  position: fixed;
+}
+
+#top-nav-list {
+  //border-bottom: $thinline;
+}
+
+a:hover {
+  cursor: pointer;
+}
+
+.menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  //width: 0;
+  display: none !important;
+  height:100vh;
+  background-color: rgba(51, 140, 125, 0.43);
+  width: 100%;
+}
+
+div.menu * {
+  display: none !important;
+}
+
+.expand {
+  display: block !important;
+  width: 100%;
+  //transition: width 0.2s ease-in-out;
+}
+
+div.expand * {
+  display: block !important;
+}

@@ -16,3 +16,12 @@
 .nav-title {
   //text-decoration: underline;
 }
+
+.expanded-nav-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  background-color: rgba(222, 195, 22, 0.38);
+}

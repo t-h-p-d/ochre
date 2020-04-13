@@ -7,7 +7,7 @@ layout: default
     <div class="post-container row">
       {% if page.related_image %}
         <div class="post-image-container">
-          <img src="{{ page.related_image | prepend:"/imgs" | relative_url }}" class="post-image"/>
+          <img src="{{ page.related_image | prepend:"/imgs" | relative_url }}" class="post-image" id="shim"/>
         </div>
       {% endif %}
       <div class="post-content-container">

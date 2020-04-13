@@ -1,0 +1,27 @@
+---
+layout: default
+title: test page for menu building
+---
+
+<nav class="top-nav" id="top-nav">
+  <ul class="row top-nav-list" id="top-nav-list">
+    <li class="nav-title"><a href="{{ site.url | append:site.baseurl | append:"/" }}">{{ site.title }}</a></li>
+    <li class="nav-title" onclick="toggleId('menu')"><a>Menu</a></li>
+  </ul>
+  <ul class="column menu" id="menu" onclick="toggleId('menu')">
+    <li></li>
+  </ul>
+</nav>
+
+<main>
+
+</main>
+
+<footer></footer>
+
+<script>
+  console.log('js working!');
+  function toggleId(id) {
+    document.getElementById(id).classList.toggle('expand');
+  }
+</script>

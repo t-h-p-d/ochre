@@ -12,7 +12,8 @@ function toggleIdExpand(id) {
 function setShimHeight(){
   var height = document.getElementById('topnavlist').offsetHeight;
   console.log(height);
-  document.getElementById('shim').style.height = height + 'px';
+  var wrapper = document.getElementsByClassName('content-wrapper');
+  wrapper[0].style.paddingTop = height + 'px';
 }
 
 setShimHeight();

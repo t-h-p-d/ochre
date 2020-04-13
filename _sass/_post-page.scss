@@ -15,7 +15,7 @@
 }
 
 .post-image {
-  max-height: 100vh;/*would be good to find a way to subtract the height of the nav element*/
+  max-height: calc(100vh - 38px);/*would be good to find a way to subtract the height of the nav element*/
   //margin-right: $small;
 }
 

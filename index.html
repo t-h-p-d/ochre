@@ -3,23 +3,26 @@ layout: default
 title: ochre tests
 ---
 
-{% include nav.html %}
-<main>
-  <ul class="row main-wall">
+
+<main class="shim">
+  <ul class="row wall">
     {% for post in site.posts %}
-      <li class="wall-item">
+      <li class="">
         <a href="{{ post.url | relative_url }}">
-
           {% if post.related_image %}
-            <img src="{{ post.related_image | prepend:"/imgs" | relative_url }}" class="wall-image"/>
+            <img src="{{ post.related_image | prepend:"/imgs" | relative_url }}" class=""/ style="height:20vh; min-height:5rem;">
           {% endif %}
-
-          <!--h4 class="wall-title">{{ post.title }}</h4-->
-
-
         </a>
+          <!--a href="" class="">{{ post.title }}</a-->
       </li>
     {% endfor %}
   </ul>
 </main>
-{% include footer.html %}
+
+<footer></footer>
+
+<script type="text/javascript" src={{ "/js/main.js" | relative_url }}></script>
+<script type="text/javascript">
+  setShimHeight(
+  'header', 'shim');
+</script>

@@ -1,13 +1,29 @@
 <!DOCTYPE html>
+
 	<html>
+
 		<head>
 			<title>{{ page.title }}</title>
 			<!-- link to main stylesheet -->
 			<link rel="stylesheet" type="text/css" href={{ "css/main.css" | relative_url }}>
 			<meta name="viewport" content="width=device-width, initial-scale=1">
 		</head>
+
 		<body>
+
+			<nav class="column" id="nav">
+			  <ul class="row header" id="header">
+			    <li><a href="{{ site.url | append: site.baseurl | append: "/" }}">Ochre</a></li>
+			    <li><a onclick="toggleId('nav');">M</a></li>
+			  </ul>
+				<ul class ="menu" id="menu">
+					<li><a href="#"><h6>some menu item</h6></a></li>
+				</ul>
+			</nav>
+
+
 			{{ content }}
-			<script type="text/javascript" src={{ "/js/main.js" | relative_url }}></script>
+
 		</body>
+
 	</html>

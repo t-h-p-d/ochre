@@ -3,12 +3,16 @@
 
 $sans: 'Inria Sans', sans-serif;/*weights available: 300 to 700*/
 $serif: 'Inria Serif', serif;/*weights available: 300 to 700*/
+$type-color: black;
+$pu: 0.5rem 1rem;
+$transparent-blue: rgba(4, 59, 52, 0.4);
 
 html {
-  font-family: $sans;
-  font-size: 90%;
-  font-weight: 500;
+  //font-size: 62.5%;
   color: $type-color;
+  font-family: $sans;
+  line-height: 1.2;
+  font-weight: 500;
 }
 
 a {
@@ -17,18 +21,52 @@ a {
 }
 
 h1,h2,h3,h4,h5,h6 {
-  font-style: italic;
-  font-weight: 500;
-  font-size: 1rem;
-  font-family: $sans;
-  text-decoration: underline;
+  //font-family: $serif;
+  font-weight: 700;
+  font-size: 5rem;
+  margin: 0;
+  font-stretch: extra-condensed;
 }
 
 p {
-  font-family: $sans;
-  //font-size: 1.2Rem;
+  font-size: 1.6rem;
+  //font-family: $sans;
+  font-weight: 600;
+}
+
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
 }
 
 li {
   list-style-type: none;
+}
+
+hr {
+  margin: 0;
+}
+
+p {
+  max-width: 35rem;
+  margin-bottom: 0;
+}
+
+* p:first-of-type {
+  margin-top: 0;
+}
+
+a:hover {
+  cursor: pointer;
 }

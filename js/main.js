@@ -1,28 +1,15 @@
 console.log('js working!');
 
-//show or hide menu.
+function toggleId(x) {
+  document.getElementById(x).classList.toggle("expand");
+  /*document.getElementsByClassName('wall')[0].style.filter = 'blur(3px)';*/
+};
 
-function toggleId(id) {
-  document.getElementById(id).classList.toggle('expand');
-  randomBackgroundColor(id);
-}
-
-function randomBackgroundColor(id) {
-  var red = Math.floor(Math.random() * 255);
-  var green = Math.floor(Math.random() * 255);
-  var blue = Math.floor(Math.random() * 255);
-  var rgba = 'rgba(' + red + ', ' + green + ', ' + blue + ', ' + '0.4)';
-  document.getElementById(id).style.backgroundColor = rgba;
-}
-
-//shim hero images on posts to make them fullheight - nav.
-
-function setShimHeight(){
-  var height = document.getElementById('topnavlist').offsetHeight;
-
-  var shimElement = document.getElementById('shim');
-
-  shimElement.style.maxHeight = 'calc(100vh - ' + height + 'px)';
-}
-
-setShimHeight();
+function setShimHeight(refElementId, shimTargetClass){
+  //console.log(refElementId + " " + shimTargetClass);
+  var height = document.getElementById(refElementId).offsetHeight;
+  //console.log(height);
+  var shimElement = document.getElementsByClassName(shimTargetClass);
+  //console.log(shimElement[0]);
+  shimElement[0].style.top = height + "px";
+};

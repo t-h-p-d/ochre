@@ -1,7 +1,9 @@
 console.log('js working!');
 
-//show or hide menu.
 
+
+
+/*
 function getCategories() {
   var items = document.getElementsByClassName('test');
   console.log(items.length);
@@ -12,7 +14,6 @@ function getCategories() {
 }
 getCategories();
 
-/*
 setShimHeight();
 
 function toggleId(id) {

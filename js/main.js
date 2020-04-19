@@ -2,6 +2,19 @@ console.log('js working!');
 
 //show or hide menu.
 
+function getCategories() {
+  var items = document.getElementsByClassName('test');
+  console.log(items.length);
+  for (var i = 0; i < items.length; i++) {
+    var cat = (items[i].dataset.category);
+    console.log(cat);
+  }
+}
+getCategories();
+
+/*
+setShimHeight();
+
 function toggleId(id) {
   document.getElementById(id).classList.toggle('expand');
   randomBackgroundColor(id);
@@ -23,6 +36,4 @@ function setShimHeight(){
   var shimElement = document.getElementById('shim');
 
   shimElement.style.maxHeight = 'calc(100vh - ' + height + 'px)';
-}
-
-setShimHeight();
+}*/

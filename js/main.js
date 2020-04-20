@@ -1,53 +1,53 @@
 console.log('js working!');
 
-// TODO: build a new version built on classLis.toggle - obviates the need for arrays?
-
-//var filterCount = 0;
+var itemArray = document.getElementsByClassName('item');
 var filterArray = new Array();
 
-function filter(x) {
-  /*filterCount++;
-  if (filterCount == 1) {
-    console.log('filter mode started');
-  }*/
-  var filterIndex = filterArray.indexOf(x);
-  //console.log(filterIndex);
-  if (filterIndex == -1) {
-    filterArray.push(x);
-  } else {
-    filterArray.splice(filterIndex,1);
+function filterItems(x) {
+  //build an array of the categories to show:
+  buildFilterArray(x);
+
+  //hide all the items:
+  for (var i = 0; i < itemArray.length; i++) {
+    itemArray[i].classList.add('hide');
   }
-  console.log('filterArray = ' + filterArray);
-  highlightCategories(filterArray);
+
+  //show the items with classes that match the filterArray:
+  for (var i = 0; i < filterArray.length; i++) {
+    for (var j = 0; j < itemArray.length; j++) {
+      if (itemArray[j].classList.contains(filterArray[i])) {
+        itemArray[j].classList.remove('hide')
+      }
+    }
+  }
 }
 
-function highlightCategories(filterArray) {
-  var i;
-  for (i = 0; i < filterArray.length; i++) {
-    var item = document.getElementsByClassName(filterArray[i]);
+function buildFilterArray(x) {
+  //code to highlight option clicked:
+  //document.getElementById(x).classList.toggle('highlight');
+  //build filter array:
+  if (filterArray.includes(x)) {
+    var location = filterArray.indexOf(x);
+    filterArray.splice(location,1);
+  } else {
+    filterArray.push(x);
   }
-  console.log('item = ' + item);
-  for (i = 0; i < item.length; i++) {
-    item[i].style.backgroundColor = 'red';
-  }
+  return filterArray;
 }
 
 function clearFilters() {
-  //filterCount = 0;
-  //console.log(filterCount);
-  //console.log('filter mode cleared!');
-  //clear filter array
-  filterArray = new Array();
-  console.log(filterArray);
-}
+  //clear filter button highlights:
+  //var filters = document.getElementsByClassName('filters');
+  //for (var i = 0; i < filters.length; i++){
+    //filters[i].classList.remove('highlight');
+  //}
 
-/*
-var x = document.getElementsByClassName(item
-);
-console.log('x = ' + x);
-var j;
-for (j = 0; j < x.length; j++) {
-  console.log('x[j] = ' + x[j]);
-  x[j].classList.toggle('highlight');
+  //clear filters
+  for (var i = 0; i < itemArray.length; i++) {
+    itemArray[i].classList.remove('hide');
+  }
+
+  //clear filterArray:
+  //console.log('array cleared');
+  filterArray = new Array();
 }
-*/

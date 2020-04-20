@@ -16,7 +16,7 @@ title: ochre tests
       <li>by category</li>
       <ul>
         {% for category in site.categories %}
-        <li id="{{ category[0] | slugify: "latin" }}" onclick="filter('{{ category[0] | slugify: "latin" }}');">{{ category[0] }}</li>
+        <li class="filters" id="{{ category[0] | slugify: "latin" }}" onclick="filterItems('{{ category[0] | slugify: "latin" }}');">{{ category[0] }}</li>
         {% endfor %}
         <li onclick="clearFilters();">clear filters</li>
       </ul>
@@ -30,7 +30,7 @@ title: ochre tests
 <main>
   <ul>
     {% for post in site.posts %}
-    <li class="{% for category in post.categories %}
+    <li class="item {% for category in post.categories %}
         {{ category | slugify: "latin" }}
       {% endfor %}">{{ post.title }}, <i>{{ post.categories | array_to_sentence_string: ", " }}</i></li>
     {% endfor %}

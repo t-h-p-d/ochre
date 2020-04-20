@@ -16,9 +16,9 @@ title: ochre tests
       <li>by category</li>
       <ul>
         {% for category in site.categories %}
-        <li class="filters" id="{{ category[0] | slugify: "latin" }}" onclick="filterItems('{{ category[0] | slugify: "latin" }}');">{{ category[0] }}</li>
+        <li class="filters pointer" id="{{ category[0] | slugify: "latin" }}" onclick="filterItems('{{ category[0] | slugify: "latin" }}');" data-symbol="&larr;">{{ category[0] }}</li>
         {% endfor %}
-        <li onclick="clearFilters();">clear filters</li>
+        <li class="pointer" onclick="clearFilters();">clear filters</li>
       </ul>
     </ul>
   </ul>
@@ -36,36 +36,6 @@ title: ochre tests
     {% endfor %}
   </ul>
 </main>
-
-<!--ul>
-  <h6>temp category holder</h6>
-  {% for post in site.posts %}
-  <li>
-    {% for category in post.categories %}
-      {{ category | slugify: "latin" }}
-    {% endfor %}
-  </li>
-  {% endfor %}
-</ul-->
-
-{% comment %}
-{{ post.categories |  array_to_sentence_string: " " }}
-| array_to_sentence_string: " " {% endcomment %}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 <!--<h2 id="fibonacci"></h2>
 {% include nav.html %}

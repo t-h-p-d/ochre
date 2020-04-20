@@ -1,10 +1,11 @@
 console.log('js working!');
 
+//set up the variables to contain the lists of active filters and items to be filtered
 var itemArray = document.getElementsByClassName('item');
 var filterArray = new Array();
 
 function filterItems(x) {
-  //build an array of the categories to show:
+  //build an array of the active filters:
   buildFilterArray(x);
 
   //hide all the items:
@@ -23,8 +24,9 @@ function filterItems(x) {
 }
 
 function buildFilterArray(x) {
-  //code to highlight option clicked:
-  //document.getElementById(x).classList.toggle('highlight');
+  //highlight active filter button:
+  document.getElementById(x).classList.toggle('highlight');
+
   //build filter array:
   if (filterArray.includes(x)) {
     var location = filterArray.indexOf(x);
@@ -37,17 +39,16 @@ function buildFilterArray(x) {
 
 function clearFilters() {
   //clear filter button highlights:
-  //var filters = document.getElementsByClassName('filters');
-  //for (var i = 0; i < filters.length; i++){
-    //filters[i].classList.remove('highlight');
-  //}
+  var filters = document.getElementsByClassName('filters');
+  for (var i = 0; i < filters.length; i++) {
+    filters[i].classList.remove('highlight');
+  }
 
-  //clear filters
+  //clear filters from items:
   for (var i = 0; i < itemArray.length; i++) {
     itemArray[i].classList.remove('hide');
   }
 
   //clear filterArray:
-  //console.log('array cleared');
   filterArray = new Array();
 }

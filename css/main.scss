@@ -4,9 +4,22 @@
 @import 'typography';
 
 .highlight {
-  background-color: yellow;
+  //background-color: yellow;
+}
+
+.highlight::after {
+  content: " " attr(data-symbol);
 }
 
 .hide {
   display: none;
+}
+
+li {
+  list-style-type: none;
+}
+
+.pointer:hover {
+  //background-color: yellow;
+  cursor: pointer;
 }

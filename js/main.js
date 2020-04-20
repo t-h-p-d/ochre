@@ -1,40 +1,53 @@
 console.log('js working!');
 
+// TODO: build a new version built on classLis.toggle - obviates the need for arrays?
 
+//var filterCount = 0;
+var filterArray = new Array();
 
+function filter(x) {
+  /*filterCount++;
+  if (filterCount == 1) {
+    console.log('filter mode started');
+  }*/
+  var filterIndex = filterArray.indexOf(x);
+  //console.log(filterIndex);
+  if (filterIndex == -1) {
+    filterArray.push(x);
+  } else {
+    filterArray.splice(filterIndex,1);
+  }
+  console.log('filterArray = ' + filterArray);
+  highlightCategories(filterArray);
+}
 
-/*
-function getCategories() {
-  var items = document.getElementsByClassName('test');
-  console.log(items.length);
-  for (var i = 0; i < items.length; i++) {
-    var cat = (items[i].dataset.category);
-    console.log(cat);
+function highlightCategories(filterArray) {
+  var i;
+  for (i = 0; i < filterArray.length; i++) {
+    var item = document.getElementsByClassName(filterArray[i]);
+  }
+  console.log('item = ' + item);
+  for (i = 0; i < item.length; i++) {
+    item[i].style.backgroundColor = 'red';
   }
 }
-getCategories();
 
-setShimHeight();
-
-function toggleId(id) {
-  document.getElementById(id).classList.toggle('expand');
-  randomBackgroundColor(id);
+function clearFilters() {
+  //filterCount = 0;
+  //console.log(filterCount);
+  //console.log('filter mode cleared!');
+  //clear filter array
+  filterArray = new Array();
+  console.log(filterArray);
 }
 
-function randomBackgroundColor(id) {
-  var red = Math.floor(Math.random() * 255);
-  var green = Math.floor(Math.random() * 255);
-  var blue = Math.floor(Math.random() * 255);
-  var rgba = 'rgba(' + red + ', ' + green + ', ' + blue + ', ' + '0.4)';
-  document.getElementById(id).style.backgroundColor = rgba;
+/*
+var x = document.getElementsByClassName(item
+);
+console.log('x = ' + x);
+var j;
+for (j = 0; j < x.length; j++) {
+  console.log('x[j] = ' + x[j]);
+  x[j].classList.toggle('highlight');
 }
-
-//shim hero images on posts to make them fullheight - nav.
-
-function setShimHeight(){
-  var height = document.getElementById('topnavlist').offsetHeight;
-
-  var shimElement = document.getElementById('shim');
-
-  shimElement.style.maxHeight = 'calc(100vh - ' + height + 'px)';
-}*/
+*/

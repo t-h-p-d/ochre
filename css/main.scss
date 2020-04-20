@@ -3,20 +3,6 @@
 
 @import 'typography';
 
-//Old css might be still useful
-
-.main-wall {
-  flex-wrap: wrap;
-}
-
-.wall-item {
-  min-height: $medium;
-  height: 17.5vh;
-  padding: 0 0 $minimal $minimal;
-}
-
-li.wall-item *{
-  height: 100%;
-  padding: 0;
-  margin: 0;
+.highlight {
+  background-color: yellow;
 }

@@ -3,7 +3,54 @@ layout: default
 title: ochre tests
 ---
 
+<header>
+  <ul>
+    <li>home</li>
+    <li>menu</li>
+  </ul>
+  <ul>
+    <li>about</li>
+    <li>contact</li>
+    <li>filter</li>
+    <ul>
+      <li>by category</li>
+      <ul>
+        {% for category in site.categories %}
+        <li id="{{ category[0] | slugify: "latin" }}" onclick="filter('{{ category[0] | slugify: "latin" }}');">{{ category[0] }}</li>
+        {% endfor %}
+        <li onclick="clearFilters();">clear filters</li>
+      </ul>
+    </ul>
+  </ul>
 
+</header>
+
+<hr/>
+
+<main>
+  <ul>
+    {% for post in site.posts %}
+    <li class="{% for category in post.categories %}
+        {{ category | slugify: "latin" }}
+      {% endfor %}">{{ post.title }}, <i>{{ post.categories | array_to_sentence_string: ", " }}</i></li>
+    {% endfor %}
+  </ul>
+</main>
+
+<!--ul>
+  <h6>temp category holder</h6>
+  {% for post in site.posts %}
+  <li>
+    {% for category in post.categories %}
+      {{ category | slugify: "latin" }}
+    {% endfor %}
+  </li>
+  {% endfor %}
+</ul-->
+
+{% comment %}
+{{ post.categories |  array_to_sentence_string: " " }}
+| array_to_sentence_string: " " {% endcomment %}
 
 
 

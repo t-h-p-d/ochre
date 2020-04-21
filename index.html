@@ -11,16 +11,26 @@ title: ochre tests
   <ul>
     <li>about</li>
     <li>contact</li>
-    <li>filter</li>
+    <li id="marker" data-symbol="&larr;">filter</li>
     <ul>
-      <li>by category</li>
+      <li>by category:</li>
       <ul>
         {% for category in site.categories %}
         <li class="filters pointer" id="{{ category[0] | slugify: "latin" }}" onclick="filterItems('{{ category[0] | slugify: "latin" }}');" data-symbol="&larr;">{{ category[0] }}</li>
         {% endfor %}
-        <li class="pointer" onclick="clearFilters();">clear filters</li>
+      </ul>
+      <li>by date:</li>
+      <ul>
+        {% for post in site.posts %}
+          {% capture pdate %}{{ post.date | date_to_string | slice: 3,8 }}{% endcapture %}
+          {% capture pndate %}{{ post.next.date | date_to_string | slice: 3,8 }}{% endcapture %}
+          {% if pdate != pndate %}
+            <li class="filters pointer" id="{{ post.date | date_to_string | slice: 3,8 | slugify: "latin" }}" onclick="filterItems('{{ post.date | date_to_string | slice: 3,8 | slugify: "latin" }}');" data-symbol="&larr;">{{ post.date | date_to_string | slice: 3,8 }}</li>
+          {% endif %}
+        {% endfor %}
       </ul>
     </ul>
+      <li class="pointer" onclick="clearFilters();">clear filters</li>
   </ul>
 
 </header>
@@ -30,47 +40,16 @@ title: ochre tests
 <main>
   <ul>
     {% for post in site.posts %}
-    <li class="item {% for category in post.categories %}
-        {{ category | slugify: "latin" }}
-      {% endfor %}">{{ post.title }}, <i>{{ post.categories | array_to_sentence_string: ", " }}</i></li>
+      <ul class="item {% for category in post.categories %} {{ category | slugify: "latin" }} {% endfor %} {{ post.date | date_to_string | slice: 3,8 | slugify: "latin" }}">
+        <li><a href ="{{ post.url | relative_url }}" class="pointer">{{ post.title }}</a></li>
+        <li><i>{{ post.categories | array_to_sentence_string: ", " }}</i></li>
+        <li>{{ post.date | date_to_string }}</li>
+        {% if post.related_image %}
+          <li><img src="{{ post.related_image | prepend:"/imgs" | relative_url }}"/></li>
+        {% endif %}
+        <hr/>
+      </ul>
     {% endfor %}
   </ul>
 </main>
-
-<!--<h2 id="fibonacci"></h2>
-{% include nav.html %}
-<main>
-  <ul class="row main-wall">
-    {% for post in site.posts %}
-      {% if post.date == post.next.date %}
-        <li class="test" data-category="{{ post.categories }}"><h4>{{ post.title }}</h4> </li>
-
-      {% else %}
-        <li><h4>{{ post.date | date_to_long_string: "ordinal" }} </h4></li>
-        <li class="date" data-category="{{ post.categories }}"><h4>{{ post.title }},</h4></li>
-      {% endif %}
-    {% endfor %}
-  </ul>
-</main>
-{% include footer.html %}
-
-{% for category in site.categories %}
-  <h3>{{ category[0] }}</h3>
-  <ul>
-    {% for post in category[1] %}
-      <li><a href="{{ post.url }}">{{ post.title }}</a></li>
-    {% endfor %}
-  </ul>
-{% endfor %}
-
-{% if post.related_image %}
-  <span class="displaynone">{% increment var %}</span>
-
-  <li class="wall-item">
-    {{ var }}
-    <a href="{{ post.url | relative_url }}">
-      <img src="{{ post.related_image | prepend:"/imgs" | relative_url }}" class="wall-image"/>
-    </a>
-  </li>
-
-{% endif %}-->
+<script type="text/javascript" src={{ "/js/filter.js" | relative_url }}></script>

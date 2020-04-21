@@ -3,6 +3,8 @@
 
 @import 'typography';
 
+//functional clases for js
+
 .highlight {
   //background-color: yellow;
 }
@@ -15,11 +17,23 @@
   display: none;
 }
 
-li {
-  list-style-type: none;
-}
+//styling classes
 
 .pointer:hover {
-  //background-color: yellow;
+  background-color: lightgrey;
   cursor: pointer;
+}
+
+main {
+  display: flex;
+  flex-flow: row;
+  row-wrap: wrap;
+}
+
+li:hover {
+  //background-color: lightgrey;
+}
+
+img {
+  height: 50px;
 }

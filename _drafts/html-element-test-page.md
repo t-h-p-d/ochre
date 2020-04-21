@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "html element test post"
+categories: [category a, test post]
 ---
 
 html element test page

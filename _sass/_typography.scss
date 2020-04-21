@@ -5,6 +5,9 @@ $sans: 'Inria Sans', sans-serif;/*weights available: 300 to 700*/
 $serif: 'Inria Serif', serif;/*weights available: 300 to 700*/
 
 $type-color: #2b2b2b;
+$dotted-line: 1px dotted grey;
+
+//options for selectors
 
 html {
   box-sizing: border-box;
@@ -28,4 +31,17 @@ html {
 a {
   text-decoration: none;
   color: $type-color;
+}
+
+li {
+  list-style-type: none;
+}
+
+hr {
+  border-top: $dotted-line;
+}
+
+b {
+  font-weight: 600;
+  //font-size: 1rem;
 }

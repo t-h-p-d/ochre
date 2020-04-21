@@ -4,7 +4,19 @@ console.log('js working!');
 var itemArray = document.getElementsByClassName('item');
 var filterArray = new Array();
 
+//set up click counter
+var count = 0;
+
 function filterItems(x) {
+  //mark filters active
+  if (count == 0) {
+    document.getElementById('marker').classList.add('highlight');
+  }
+  count++;
+
+  //highlight active filter button:
+  document.getElementById(x).classList.toggle('highlight');
+
   //build an array of the active filters:
   buildFilterArray(x);
 
@@ -24,9 +36,6 @@ function filterItems(x) {
 }
 
 function buildFilterArray(x) {
-  //highlight active filter button:
-  document.getElementById(x).classList.toggle('highlight');
-
   //build filter array:
   if (filterArray.includes(x)) {
     var location = filterArray.indexOf(x);
@@ -51,4 +60,10 @@ function clearFilters() {
 
   //clear filterArray:
   filterArray = new Array();
+
+  //clear marker
+  document.getElementById('marker').classList.remove('highlight');
+
+  //reset counter:
+  count = 0;
 }

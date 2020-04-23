@@ -3,11 +3,7 @@
 
 @import 'typography';
 
-//functional clases for js
-
-.highlight {
-  //background-color: yellow;
-}
+//functional clases for js:
 
 .highlight::after {
   content: " " attr(data-symbol);
@@ -17,23 +13,92 @@
   display: none;
 }
 
-//styling classes
+//styling classes:
 
 .pointer:hover {
-  background-color: lightgrey;
   cursor: pointer;
 }
 
+// TEMP: (classes for temporary dev use)
+
+header {
+  position: sticky;
+  top: 0;
+  //bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 0.5rem;
+  min-height: 8rem;
+  height: 17.5vh;
+  //backdrop-filter: blur(1px);
+  //display: none !important;
+  //justify-content: space-between;
+}
+
+//header * {
+  //display: none;
+//}
+
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+.wall {
+  flex-wrap: wrap;
+}
+
+.item-date,.item-category {
+  display:none;
+}
+
+.item-title {
+  display: none;
+}
+
+.item-thumb {
+  width: auto;
+  padding: 0 4px 4px 0;
+}
+
+li.item-thumb img {
+  min-height: 8rem;
+  height: 17.5vh;
+}
+
+#navbar {
+  justify-content: space-between;
+}
+
+#menu {
+  display: none;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+#menu>ul:first-of-type {
+  border-left: 1px grey solid;
+}
+
+#menu>ul {
+  margin-left: 0.5rem;
+  padding-left: 0.5rem;
+
+}
+
+.expand {
+  display: flex !important;
+}
+
 main {
-  display: flex;
-  flex-flow: row;
-  row-wrap: wrap;
+  height: 200vh;
 }
 
-li:hover {
-  //background-color: lightgrey;
+.filterlist {
+  display: none;
+  max-height: 100%;
 }
 
-img {
-  height: 50px;
+.item:hover {
+  opacity: 0;
 }

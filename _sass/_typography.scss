@@ -1,8 +1,11 @@
  @import url('https://fonts.googleapis.com/css2?family=Inria+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+//@import url('https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,400;0,700;1,400&display=swap');
+
 
 $sans: 'Inria Sans', sans-serif;/*weights available: 300 to 700*/
 $serif: 'Inria Serif', serif;/*weights available: 300 to 700*/
+//$bitter: 'Bitter', serif;/*weights avaialable 400, 400i, 700*/
 
 $type-color: #2b2b2b;
 $dotted-line: 1px dotted grey;
@@ -38,10 +41,25 @@ li {
 }
 
 hr {
+  display: none;
   border-top: $dotted-line;
 }
 
 b {
   font-weight: 600;
   //font-size: 1rem;
+}
+
+img {
+  display: block;
+}
+
+.row {
+  display: flex;
+  flex-flow: row;
+}
+
+.column {
+  display: flex;
+  flex-flow: column;
 }

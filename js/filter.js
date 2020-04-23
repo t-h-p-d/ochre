@@ -1,4 +1,4 @@
-console.log('js working!');
+console.log('filter.js working!');
 
 //set up the variables to contain the lists of active filters and items to be filtered
 var itemArray = document.getElementsByClassName('item');
@@ -31,6 +31,13 @@ function filterItems(x) {
       if (itemArray[j].classList.contains(filterArray[i])) {
         itemArray[j].classList.remove('hide')
       }
+    }
+  }
+
+  //if there is nothing in the filterArray, show all items:
+  if (filterArray.length == 0)  {
+    for (var i = 0; i < itemArray.length; i++) {
+      itemArray[i].classList.remove('hide');
     }
   }
 }

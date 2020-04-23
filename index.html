@@ -3,24 +3,28 @@ layout: default
 title: ochre tests
 ---
 
-<header>
-  <ul>
-    <li>home</li>
-    <li>menu</li>
+<header class="row" id="header">
+<!--top navbar-->
+  <ul class="column" id="navbar">
+    <li><a href="{{ site.url | append:site.baseurl | append:"/" }}">{% comment %}{{ site.title }}{% endcomment %}Home</a></li>
+    <li class="pointer" onclick="expandId('menu')">Menu</li>
   </ul>
-  <ul>
-    <li>about</li>
-    <li>contact</li>
-    <li id="marker" data-symbol="&larr;">filter</li>
+
+<!--homepage menu options-->
+  <ul class="row" id="menu"> <!--onclick="expandId('menu')"-->
     <ul>
-      <li>by category:</li>
-      <ul>
+      <li>about</li>
+      <li>contact</li>
+      <li class="pointer" id="marker" data-symbol="&larr;" onclick="expandClass('filterlist');">filter posts</li>
+    </ul>
+    <ul class="filterlist column">
+      <li><i>by category:</i></li>
         {% for category in site.categories %}
         <li class="filters pointer" id="{{ category[0] | slugify: "latin" }}" onclick="filterItems('{{ category[0] | slugify: "latin" }}');" data-symbol="&larr;">{{ category[0] }}</li>
         {% endfor %}
-      </ul>
-      <li>by date:</li>
-      <ul>
+    </ul>
+    <ul class="filterlist column">
+      <li><i>by date:</i></li>
         {% for post in site.posts %}
           {% capture pdate %}{{ post.date | date_to_string | slice: 3,8 }}{% endcapture %}
           {% capture pndate %}{{ post.next.date | date_to_string | slice: 3,8 }}{% endcapture %}
@@ -28,28 +32,43 @@ title: ochre tests
             <li class="filters pointer" id="{{ post.date | date_to_string | slice: 3,8 | slugify: "latin" }}" onclick="filterItems('{{ post.date | date_to_string | slice: 3,8 | slugify: "latin" }}');" data-symbol="&larr;">{{ post.date | date_to_string | slice: 3,8 }}</li>
           {% endif %}
         {% endfor %}
-      </ul>
-    </ul>
       <li class="pointer" onclick="clearFilters();">clear filters</li>
+    </ul>
   </ul>
 
 </header>
 
-<hr/>
-
+<!--list of post titles, thumbnails, dates etc.-->
 <main>
-  <ul>
+
+  <ul class="row wall" id="wall">
     {% for post in site.posts %}
-      <ul class="item {% for category in post.categories %} {{ category | slugify: "latin" }} {% endfor %} {{ post.date | date_to_string | slice: 3,8 | slugify: "latin" }}">
-        <li><a href ="{{ post.url | relative_url }}" class="pointer">{{ post.title }}</a></li>
-        <li><i>{{ post.categories | array_to_sentence_string: ", " }}</i></li>
-        <li>{{ post.date | date_to_string }}</li>
-        {% if post.related_image %}
-          <li><img src="{{ post.related_image | prepend:"/imgs" | relative_url }}"/></li>
-        {% endif %}
-        <hr/>
-      </ul>
+      <a href ="{{ post.url | relative_url }}" class="pointer">
+        <ul class="item {% for category in post.categories %} {{ category | slugify: "latin" }} {% endfor %} {{ post.date | date_to_string | slice: 3,8 | slugify: "latin" }}">
+          <li class="item-title">{{ post.title }}</li>
+          <li class = item-category><i>{{ post.categories | array_to_sentence_string: ", " }}</i></li>
+          <li class="item-date">{{ post.date | date_to_string }}</li>
+          {% if post.related_image %}
+            <li class="item-thumb"><img src="{{ post.related_image | prepend:"/imgs" | relative_url }}"/></li>
+          {% endif %}
+        </ul>
+      </a>
     {% endfor %}
   </ul>
+
 </main>
+
+
+
+<!--script to make filtering work-->
 <script type="text/javascript" src={{ "/js/filter.js" | relative_url }}></script>
+
+<!--script to make expanding menus work-->
+<script type="text/javascript" src={{ "/js/expand.js" | relative_url }}></script>
+
+<!--script to shim the main div to clear the header-->
+<script type="text/javascript" src={{ "/js/shim.js" | relative_url }}></script>
+
+<script type="text/javascript">
+  //shim('header','wall');
+</script>

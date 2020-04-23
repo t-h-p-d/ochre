@@ -33,6 +33,7 @@ header {
   //backdrop-filter: blur(1px);
   //display: none !important;
   //justify-content: space-between;
+  //border-bottom: 1px solid grey;
 }
 
 //header * {
@@ -48,17 +49,22 @@ ul {
   flex-wrap: wrap;
 }
 
-.item-date,.item-category {
-  display:none;
+.item {
+  float: left;
+  //position: relative;
+  border: 1px solid red;
 }
 
-.item-title {
-  display: none;
+.item-date,.item-category,.item-title {
+  //display:none;
 }
 
 .item-thumb {
   width: auto;
   padding: 0 4px 4px 0;
+  //position: absolute;
+  //top: 0;
+  //left: 0;
 }
 
 li.item-thumb img {
